@@ -21,10 +21,12 @@ gem 'simplecov', '~> 0.21.2'
 gem 'webpacker', '~> 5.0'
 
 group :development, :test do
+  gem 'bullet'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails', '~> 6.2'
   gem 'faker', '~> 2.18'
   gem 'graphiql-rails'
+  gem 'pry-rails', '~> 0.3.9'
   gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
 end
 

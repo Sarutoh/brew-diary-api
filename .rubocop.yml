@@ -5,10 +5,18 @@ AllCops:
 
 # Metrics
 Metrics/MethodLength:
-  Max: 15
+  Max: 25
+Metrics/BlockLength:
+  Exclude:
+    - config/environments/*
+    - lib/tasks/*
 Metrics/CyclomaticComplexity:
   Enabled: false
 Metrics/PerceivedComplexity:
+  Enabled: false
+
+# Naming
+Naming/MethodParameterName:
   Enabled: false
 
 # Style

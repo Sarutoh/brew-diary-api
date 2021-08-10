@@ -6,6 +6,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.0'
 
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'devise'
+gem 'devise-jwt'
+gem 'fast_jsonapi'
+gem 'graphql', '~> 1.12', '>= 1.12.14'
 gem 'jbuilder', '~> 2.7'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
@@ -30,4 +34,5 @@ group :development do
   gem 'web-console', '>= 4.1.0'
 end
 
+gem 'graphiql-rails', group: :development
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

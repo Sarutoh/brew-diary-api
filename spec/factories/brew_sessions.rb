@@ -24,8 +24,8 @@
 FactoryBot.define do
   factory :brew_session do
     title { Faker::Beer.name }
-    description { 'MyText' }
-    image_url { 'MyString' }
+    description { Faker::Lorem.sentence(word_count: 6) }
+    image_url { Faker::Internet.url }
     volume { 25 }
 
     association :user

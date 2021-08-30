@@ -24,5 +24,7 @@
 class BrewSession < ApplicationRecord
   belongs_to :user
 
-  has_many :ingredients, dependent: :destroy
+  has_many :ingredients
+  has_many :mash_steps, dependent: :destroy
+  has_many :hops
 end

@@ -12,5 +12,8 @@ module Types
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
 
     field :user, Types::UserType, null: false
+    field :hops, Types::HopType, null: true
+    field :mash_steps, Types::MashStepType, null: true
+    field :ingredients, Types::IngredientType, null: true
   end
 end

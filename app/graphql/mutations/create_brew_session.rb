@@ -10,7 +10,7 @@ module Mutations
     field :brew_session, Types::BrewSessionType, null: true
     field :errors, [String], null: false
 
-    def resolve(title:, description: nil, image_url: nil)
+    def resolve(volume:, title:, description: nil, image_url: nil)
       if context[:current_user].nil?
         raise GraphQL::ExecutionError,
               'You need to authenticate to perform this action'

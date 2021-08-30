@@ -23,3 +23,6 @@ Naming/MethodParameterName:
 # Style
 Style/Documentation:
   Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false

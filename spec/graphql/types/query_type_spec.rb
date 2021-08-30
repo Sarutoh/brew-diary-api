@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe Types::QueryType do
+RSpec.describe Types::QueryType, :feature do
   describe 'brew_sessions' do
     subject(:result) do
       BrewDiarySchema.execute(query).as_json

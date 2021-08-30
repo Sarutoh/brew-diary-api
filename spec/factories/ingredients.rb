@@ -6,25 +6,20 @@
 #
 #  id              :bigint           not null, primary key
 #  image_url       :string
+#  pieces          :integer
 #  title           :string           not null
 #  weight          :float
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  brew_session_id :bigint           not null
+#  brew_session_id :bigint
 #
 # Indexes
 #
 #  index_ingredients_on_brew_session_id  (brew_session_id)
 #
-# Foreign Keys
-#
-#  fk_rails_...  (brew_session_id => brew_sessions.id)
-#
 FactoryBot.define do
   factory :ingredient do
-    title { 'MyString' }
+    title { 'Irish moss' }
     weight { 1.5 }
-    image_url { 'MyString' }
+    image_url { Faker::Internet.url }
     brew_session { nil }
   end
 end

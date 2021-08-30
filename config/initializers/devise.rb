@@ -11,7 +11,7 @@ Devise.setup do |config|
 
   config.strip_whitespace_keys = [:email]
 
-  config.skip_session_storage = [:http_auth]
+  config.skip_session_storage = %i[http_auth token_auth]
 
   config.stretches = Rails.env.test? ? 1 : 12
 
@@ -29,14 +29,15 @@ Devise.setup do |config|
 
   config.sign_out_via = :delete
 
-  config.jwt do |jwt|
-    jwt.secret = ENV['SECRET_KEY']
-    jwt.dispatch_requests = [
-      ['POST', %r{^/login$}]
-    ]
-    jwt.revocation_requests = [
-      ['DELETE', %r{^/logout$}]
-    ]
-    jwt.expiration_time = 30.minutes.to_i
-  end
+  config.http_authenticatable = [:token]
+end
+
+Devise::TokenAuthenticatable.setup do |config|
+  config.token_expires_in = 1.day
+
+  config.token_authentication_key = :other_key_name
+
+  config.should_reset_authentication_token = true
+
+  config.should_ensure_authentication_token = true
 end

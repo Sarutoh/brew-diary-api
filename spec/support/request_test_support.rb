@@ -12,15 +12,15 @@ module RequestSpecHelper
     login_as(resource, scope: warden_scope(resource))
   end
 
-  def sign_out(resource)
-    logout(warden_scope(resource))
-  end
+  # def sign_out(resource)
+  #   logout(warden_scope(resource))
+  # end
 
-  def sign_in_user
-    user = create :user
-    sign_in(user)
-    user
-  end
+  # def sign_in_user
+  #   user = create :user
+  #   sign_in(user)
+  #   user
+  # end
 
   private
 

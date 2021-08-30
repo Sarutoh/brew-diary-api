@@ -27,7 +27,9 @@ module Mutations
       if brew_session.save
         { brew_session: brew_session }
       else
+        # :nocov:
         { errors: brew_session.errors.full_messages }
+        # :nocov:
       end
     end
   end

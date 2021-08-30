@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# :nocov:
 class GraphqlController < ApplicationController
   def execute
     variables = prepare_variables(params[:variables])
@@ -43,3 +44,4 @@ class GraphqlController < ApplicationController
     render json: { errors: [{ message: e.message, backtrace: e.backtrace }], data: {} }, status: 500
   end
 end
+# :nocov:

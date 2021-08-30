@@ -21,9 +21,9 @@
 #  index_users_on_email                 (email) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
-class User < ApplicationRecord
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :token_authenticatable
-
-  has_many :brew_sessions, dependent: :destroy
+FactoryBot.define do
+  factory :user do
+    email { Faker::Internet.email }
+    password { Faker::Internet.password }
+  end
 end

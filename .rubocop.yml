@@ -10,6 +10,8 @@ Metrics/BlockLength:
   Exclude:
     - config/environments/*
     - lib/tasks/*
+    - db/schema.rb
+    - spec/**/*.rb
 Metrics/CyclomaticComplexity:
   Enabled: false
 Metrics/PerceivedComplexity:
@@ -21,4 +23,14 @@ Naming/MethodParameterName:
 
 # Style
 Style/Documentation:
+  Enabled: false
+
+# Rspec
+RSpec/MultipleExpectations:
+  Enabled: false
+RSpec/ExampleLength:
+  Enabled: false
+RSpec/NamedSubject:
+  Enabled: false
+RSpec/ContextWording:
   Enabled: false

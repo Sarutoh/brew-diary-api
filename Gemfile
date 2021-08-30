@@ -7,8 +7,7 @@ ruby '3.0.0'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise'
-gem 'devise-jwt'
-gem 'fast_jsonapi'
+gem 'devise-token_authenticatable', '~> 1.1'
 gem 'graphql', '~> 1.12', '>= 1.12.14'
 gem 'jbuilder', '~> 2.7'
 gem 'pg', '~> 1.1'
@@ -21,10 +20,12 @@ gem 'simplecov', '~> 0.21.2'
 gem 'webpacker', '~> 5.0'
 
 group :development, :test do
+  gem 'bullet'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails', '~> 6.2'
   gem 'faker', '~> 2.18'
   gem 'graphiql-rails'
+  gem 'pry-rails', '~> 0.3.9'
   gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
 end
 

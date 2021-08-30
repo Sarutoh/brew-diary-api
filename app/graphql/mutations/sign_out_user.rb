@@ -5,7 +5,6 @@ module Mutations
     graphql_name 'SignOutUser'
 
     field :user, Types::UserType, null: false
-    field :authentication_token, String, null: false
 
     def resolve
       user = context[:current_user]

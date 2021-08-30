@@ -8,7 +8,6 @@ module Mutations
     argument :password, String, required: true
 
     field :user, Types::UserType, null: false
-    field :authentication_token, String, null: false
 
     def resolve(args)
       user = User.find_for_database_authentication(email: args[:email])

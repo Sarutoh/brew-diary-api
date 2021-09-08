@@ -7,5 +7,6 @@ module Types
     field :sign_out_user, mutation: Mutations::SignOutUser
 
     field :create_brew_session, mutation: Mutations::CreateBrewSession
+    field :create_mash_step, mutation: Mutations::CreateMashStep
   end
 end

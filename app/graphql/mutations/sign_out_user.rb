@@ -18,7 +18,7 @@ module Mutations
           errors: user.errors
         )
       else
-        GraphQL::ExecutionError.new('User not signed in')
+        GraphQL::ExecutionError.new(I18n.t('mutations.not_signed_in'))
       end
     end
   end

@@ -20,6 +20,10 @@ RSpec.describe Mutations::RegisterUser, type: :request do
   end
 
   context 'raises error for incorrect email/password' do
+    let(:error) do
+      I18n.t('mutations.invalid_attributes', class_name: User.name, messages: 'Email has already been taken')
+    end
+
     it do
       create(:user, user_variables)
 
@@ -28,7 +32,7 @@ RSpec.describe Mutations::RegisterUser, type: :request do
       json = JSON.parse(response.body)
       data = json['data']['registerUser']
 
-      expect(json['errors'][0]['message']).to eq('Invalid Attributes for User: Email has already been taken')
+      expect(json['errors'][0]['message']).to eq(error)
       expect(data).to be_blank
     end
   end

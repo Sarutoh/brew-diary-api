@@ -12,12 +12,12 @@ module Mutations
     def resolve(duration:, temperature:, brew_session_id:)
       if user.nil?
         raise GraphQL::ExecutionError,
-              'You need to authenticate to perform this action'
+              I18n.t('mutations.unauthenticated')
       end
 
       unless BrewSessions::MashStepPolicy.new(record: brew_session(brew_session_id), user: user).create?
         raise GraphQL::ExecutionError,
-              'You are not authorize to perform this action'
+              I18n.t('mutations.unauthorized')
       end
 
       mash_step = MashStep.new(

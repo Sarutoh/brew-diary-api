@@ -16,6 +16,7 @@
 #
 # Indexes
 #
+#  index_brew_sessions_on_status   (status)
 #  index_brew_sessions_on_user_id  (user_id)
 #
 # Foreign Keys

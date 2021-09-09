@@ -1,9 +1,9 @@
 require: rubocop-rspec
 
 AllCops:
-  NewCops: enable
-  Exclude:
-    - db/schema.rb
+    NewCops: enable
+    Exclude:
+      - db/schema.rb
 
 # Metrics
 Metrics/MethodLength:

@@ -12,6 +12,8 @@ module RequestSpecHelper
     login_as(resource, scope: warden_scope(resource))
   end
 
+  # TODO: remove it if not used
+
   # def sign_out(resource)
   #   logout(warden_scope(resource))
   # end

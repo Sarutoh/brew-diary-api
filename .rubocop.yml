@@ -4,6 +4,8 @@ AllCops:
   NewCops: disable
   Exclude:
     - db/schema.rb
+    - vendor/**/*.rb
+    - vendor/bundle/**/*
 
 # Metrics
 Metrics/MethodLength:

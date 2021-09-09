@@ -13,7 +13,7 @@ module Mutations
     def resolve(volume:, title:, description: nil, image_url: nil)
       if context[:current_user].nil?
         raise GraphQL::ExecutionError,
-              'You need to authenticate to perform this action'
+              I18n.t('mutations.unauthenticated')
       end
 
       brew_session = BrewSession.new(

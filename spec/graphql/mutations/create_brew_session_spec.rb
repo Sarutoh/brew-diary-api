@@ -23,7 +23,7 @@ RSpec.describe Mutations::CreateBrewSession, type: :request do
         json = JSON.parse(response.body)
         data = json['data']['createBrewSession']
 
-        expect(json['errors'][0]['message']).to eq('You need to authenticate to perform this action')
+        expect(json['errors'][0]['message']).to eq(I18n.t('mutations.unauthenticated'))
         expect(data).to be_blank
       end
     end

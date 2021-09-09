@@ -17,10 +17,10 @@ module Mutations
           context[:current_user] = user
           MutationResult.call(obj: { user: user }, success: true)
         else
-          GraphQL::ExecutionError.new('Incorrect Email/Password')
+          GraphQL::ExecutionError.new(I18n.t('mutations.incorrect_values'))
         end
       else
-        GraphQL::ExecutionError.new('User not registered on this application')
+        GraphQL::ExecutionError.new(I18n.t('mutations.not_registered'))
       end
     end
   end

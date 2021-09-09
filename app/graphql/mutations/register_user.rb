@@ -20,8 +20,8 @@ module Mutations
       )
     rescue ActiveRecord::RecordInvalid => e
       GraphQL::ExecutionError.new(
-        "Invalid Attributes for #{e.record.class.name}: " \
-        "#{e.record.errors.full_messages.join(', ')}"
+        I18n.t('mutations.invalid_attributes', class_name: e.record.class.name,
+                                               messages: e.record.errors.full_messages.join(', '))
       )
     end
   end

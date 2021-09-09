@@ -23,7 +23,7 @@ RSpec.describe Mutations::SignOutUser, type: :request do
     json = JSON.parse(response.body)
     data = json['data']['signOutUser']
 
-    expect(json['errors'][0]['message']).to eq('User not signed in')
+    expect(json['errors'][0]['message']).to eq(I18n.t('mutations.not_signed_in'))
     expect(data).to be_blank
   end
 

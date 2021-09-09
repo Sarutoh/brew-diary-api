@@ -24,7 +24,7 @@ RSpec.describe Mutations::CreateMashStep, type: :request do
         json = JSON.parse(response.body)
         data = json['data']['createMashStep']
 
-        expect(json['errors'][0]['message']).to eq('You need to authenticate to perform this action')
+        expect(json['errors'][0]['message']).to eq(I18n.t('mutations.unauthenticated'))
         expect(data).to be_blank
       end
     end
@@ -40,7 +40,7 @@ RSpec.describe Mutations::CreateMashStep, type: :request do
         json = JSON.parse(response.body)
         data = json['data']['createMashStep']
 
-        expect(json['errors'][0]['message']).to eq('You are not authorize to perform this action')
+        expect(json['errors'][0]['message']).to eq(I18n.t('mutations.unauthorized'))
         expect(data).to be_blank
       end
     end

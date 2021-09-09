@@ -27,7 +27,7 @@ RSpec.describe Mutations::SignInUser, type: :request do
     json = JSON.parse(response.body)
     data = json['data']['signInUser']
 
-    expect(json['errors'][0]['message']).to eq('Incorrect Email/Password')
+    expect(json['errors'][0]['message']).to eq(I18n.t('mutations.incorrect_values'))
     expect(data).to be_blank
   end
 
@@ -37,7 +37,7 @@ RSpec.describe Mutations::SignInUser, type: :request do
     json = JSON.parse(response.body)
     data = json['data']['signInUser']
 
-    expect(json['errors'][0]['message']).to eq('User not registered on this application')
+    expect(json['errors'][0]['message']).to eq(I18n.t('mutations.not_registered'))
     expect(data).to be_blank
   end
 

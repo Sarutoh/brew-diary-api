@@ -7,6 +7,7 @@
 #  id          :bigint           not null, primary key
 #  description :text
 #  image_url   :string
+#  status      :string           default("initialized"), not null
 #  title       :string           not null
 #  volume      :integer          not null
 #  created_at  :datetime         not null
@@ -29,5 +30,7 @@ FactoryBot.define do
     volume { 25 }
 
     association :user
+
+    traits_for_enum(:status)
   end
 end

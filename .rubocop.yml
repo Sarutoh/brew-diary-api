@@ -1,7 +1,9 @@
 require: rubocop-rspec
 
 AllCops:
-    NewCops: enable
+  NewCops: enable
+  Exclude:
+    - db/schema.rb
 
 # Metrics
 Metrics/MethodLength:
@@ -24,6 +26,9 @@ Naming/MethodParameterName:
 # Style
 Style/Documentation:
   Enabled: false
+Style/MixinUsage:
+  Exclude:
+    - spec/factories/users.rb
 
 # Rspec
 RSpec/MultipleExpectations:

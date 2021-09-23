@@ -17,6 +17,7 @@ gem 'rubocop-rails', '~> 2.12'
 gem 'rubocop-rspec', require: false
 gem 'sass-rails', '>= 6'
 gem 'simplecov', '~> 0.21.2'
+gem 'sprockets', '~> 3.7.2'
 gem 'webpacker', '~> 5.0'
 
 group :development, :test do

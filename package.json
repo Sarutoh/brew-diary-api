@@ -19,6 +19,12 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "apollo-client": "^2.6.10",
+    "apollo-link": "^1.2.14",
+    "apollo-link-error": "^1.1.13",
+    "apollo-link-http": "^1.5.17",
+    "graphql-tag": "^2.12.5",
+    "vue-apollo": "^3.0.8",
     "webpack-dev-server": "^3.11.2"
   }
 }

@@ -1,14 +1,3 @@
 en:
-  mutations:
-    unauthenticated:
-      You need to authenticate to perform this action
-    unauthorized:
-      You are not authorize to perform this action
-    incorrect_values:
-      Incorrect Email/Password
-    not_registered:
-      User not registered on this application
-    not_signed_in:
-      User not signed in
-    invalid_attributes:
-      "Invalid Attributes for %{class_name}: %{messages}"
+  hello_world:
+    hello world!!
